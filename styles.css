@@ -12,6 +12,11 @@
 */
 
 /* ===== GLOBAL (Base) Styles ===== */
+
+* {
+    box-sizing: border-box;
+}
+
 body {
     font-family: Helvetica, Arial, sans-serif;
     margin: 0;
@@ -100,6 +105,39 @@ footer {
     text-align: center;
     padding: 1rem;
     margin-top: 1rem;
+}
+
+/* 800px+ */
+
+@media screen and (min-width: 800px) {
+
+    /* Create two-column layout */
+    body {
+        grid-template-columns: 1fr 300px;
+    }
+
+    /* Span both grid columns */
+    header, nav, footer {
+        grid-column: 1 / -1;
+    }
+
+    /* Horizontal navigation */
+    nav ul {
+        display: flex;
+    }
+
+    /* Display cards horizontally */
+    .card-row {
+        display: flex;
+        justify-content: space-between;
+        gap: 1rem;
+    }
+
+    /* Set individual card widths */
+    .card-row > section {
+        width: 30%;
+    }
+
 }
 
 /* ===== Media Query (Medium) ===== */
